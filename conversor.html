@@ -4,75 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Preço - Regra de 3</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .form-group button:hover {
-            background-color: #45a049;
-        }
-
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #eaf0e4;
-            border: 1px solid #c8e1c8;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-    </style>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Conversor de Preço - Regra de 3</h1>
         
@@ -100,27 +35,7 @@
         </div>
     </div>
 
-    <script>
-        function calcularPreco() {
-            // Obter os valores inseridos nos campos
-            let precoColetado = parseFloat(document.getElementById("preco-coletado").value);
-            let pesoColetado = parseFloat(document.getElementById("peso-coletado").value);
-            let pesoSolicitado = parseFloat(document.getElementById("peso-solicitado").value);
-
-            // Validar se todos os campos estão preenchidos
-            if (isNaN(precoColetado) || isNaN(pesoColetado) || isNaN(pesoSolicitado)) {
-                alert("Por favor, preencha todos os campos corretamente.");
-                return;
-            }
-
-            // Calcular o preço do cliente utilizando a regra de 3
-            let precoCliente = (precoColetado * pesoSolicitado) / pesoColetado;
-
-            // Exibir o resultado
-            document.getElementById("preco-cliente").style.display = "block";
-            document.getElementById("valor-preco-cliente").textContent = precoCliente.toFixed(2);
-        }
-    </script>
-
+    <!-- Link para o arquivo JS -->
+    <script src="javaaa.js"></script>
 </body>
 </html>
