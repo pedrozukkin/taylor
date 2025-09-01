@@ -1,7 +1,23 @@
+// Função para formatar o campo de preço com vírgula antes dos dois últimos dígitos
+function formatarPreco(input) {
+    let valor = input.value.replace(/\D/g, ""); // remove tudo que não for dígito
+
+    if (valor.length < 3) {
+        valor = valor.padStart(3, "0"); // garante pelo menos 3 dígitos
+    }
+
+    let reais = valor.slice(0, -2);
+    let centavos = valor.slice(-2);
+
+    input.value = `${reais},${centavos}`;
+}
+
 // Função para calcular o preço do cliente
 function calcularPreco() {
     // Obter os valores inseridos nos campos
-    let precoColetado = parseFloat(document.getElementById("preco-coletado").value);
+    let precoColetadoStr = document.getElementById("preco-coletado").value;
+    let precoColetado = parseFloat(precoColetadoStr.replace(",", ".")); // converte para número
+
     let pesoColetado = parseFloat(document.getElementById("peso-coletado").value);
     let pesoSolicitado = parseFloat(document.getElementById("peso-solicitado").value);
 
@@ -14,7 +30,7 @@ function calcularPreco() {
     // Calcular o preço do cliente utilizando a regra de 3
     let precoCliente = (precoColetado * pesoSolicitado) / pesoColetado;
 
-    // Exibir o resultado
+    // Exibir o resultado formatado com vírgula
     document.getElementById("preco-cliente").style.display = "block";
-    document.getElementById("valor-preco-cliente").textContent = precoCliente.toFixed(2); // Formata o preço com 2 casas decimais
+    document.getElementById("valor-preco-cliente").textContent = precoCliente.toFixed(2).replace(".", ",");
 }
